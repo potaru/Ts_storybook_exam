@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react'
 
 export interface TaskProps {
     task: TaskObject;
-    onArchiveTask(id:string): any;
-    onPinTask(id:string): any;
+    onArchiveTask(id:string): Function;
+    onPinTask(id:string): Function;
 }
 
 export interface TaskObject {
