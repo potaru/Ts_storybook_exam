@@ -4,11 +4,11 @@ import { RootState } from '../modules';
 
 import { TaskList } from './TaskList';
 
-export interface InboxScreenProps {
+export interface TaskContainerProps {
     error?: string;
 }
 
-export default function TaskContainer(error: InboxScreenProps) {
+export default function TaskContainer(error: TaskContainerProps) {
     const tasks = useSelector((state: RootState) => state.task.tasks);
     const dispatch = useDispatch();
   
