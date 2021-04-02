@@ -1,4 +1,4 @@
-import TaskContainer, { InboxScreenProps } from './TaskContainer';
+import TaskContainer, { TaskContainerProps } from './TaskContainer';
 import { Story } from '@storybook/react';
 
 import { Provider } from 'react-redux';
@@ -14,7 +14,7 @@ export default {
     title: 'TaskContainer',
 };
 
-const Template: Story<InboxScreenProps> = (args) => <TaskContainer {...args} />;
+const Template: Story<TaskContainerProps> = (args) => <TaskContainer {...args} />;
 
 export const Default = Template.bind({});
 
