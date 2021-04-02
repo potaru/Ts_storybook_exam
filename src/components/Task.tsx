@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react'
 
 export interface TaskProps {
     task: TaskObject;
-    onArchiveTask(id:string): Function;
-    onPinTask(id:string): Function;
+    onArchiveTask(id:string): any;
+    onPinTask(id:string): any;
 }
 
 export interface TaskObject {
@@ -13,6 +13,7 @@ export interface TaskObject {
 }
 
 export default function Task({task: { id, title, state }, onArchiveTask, onPinTask}: TaskProps): ReactElement {
+
     return (
         <div className={`list-item ${state}`}>
             <label className="checkbox">
@@ -38,3 +39,4 @@ export default function Task({task: { id, title, state }, onArchiveTask, onPinTa
         </div>
     )
 }
+

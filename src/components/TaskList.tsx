@@ -1,19 +1,19 @@
 import React, { ReactElement } from 'react'
 
-import Task, { TaskProps, TaskObject } from './Task';
+import Task, { TaskObject } from './Task';
 
 export interface TaskListProps {
-    loading: boolean;
     tasks: TaskObject[];
-    onArchiveTask(id:string): Function;
-    onPinTask(id:string): Function;
+    loading?: boolean;
+    onArchiveTask(id:string): any;
+    onPinTask(id:string): any;
 }
 
-export default function TaskList({ loading, tasks, onArchiveTask, onPinTask}: TaskListProps): ReactElement {
+export function TaskList({tasks, loading, onArchiveTask, onPinTask}: TaskListProps): ReactElement {
     const events = {
         onArchiveTask,
         onPinTask
-    };
+    }
     const LoadingRow = (
         <div className="loading-item">
             <span className="glow-checkbox" />
@@ -35,7 +35,7 @@ export default function TaskList({ loading, tasks, onArchiveTask, onPinTask}: Ta
             </div>
         );
     }
-    if (tasks.length === 0) {
+    else if (tasks.length === 0) {
         return (
             <div className="list-items">
               <div className="wrapper-message">
@@ -47,14 +47,15 @@ export default function TaskList({ loading, tasks, onArchiveTask, onPinTask}: Ta
         );
     }
     const filtered_task: TaskObject[] = [
-        ...tasks.filter(task => task.state === 'TASK_PINNED'),
-        ...tasks.filter(task => task.state !== 'TASK_PINNED')
+        ...tasks.filter((task: TaskObject) => task.state === 'TASK_PINNED'),
+        ...tasks.filter((task: TaskObject) => task.state !== 'TASK_PINNED')
     ]
     return (
         <div className="list-items">
             {filtered_task.map(task => 
-                <Task key={task.id} task={task} {...events} />
+                <Task key={task.id} task={task} {... events} />
             )}
         </div>
     )
 }
+
