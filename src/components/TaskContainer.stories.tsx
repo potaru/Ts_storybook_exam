@@ -7,7 +7,6 @@ import rootReducer from '../modules';
 
 const store = createStore(rootReducer);
 
-
 export default {
     component: TaskContainer,
     decorators: [(story: any) => <Provider store={store}>{story()}</Provider>],

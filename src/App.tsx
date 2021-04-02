@@ -1,4 +1,3 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import rootReducer from './modules';
 import InboxScreen from './components/TaskContainer';

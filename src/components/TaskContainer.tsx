@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { archiveTask, pinTask, TaskState } from '../modules/Task';
+import { archiveTask, pinTask } from '../modules/Task';
 import { RootState } from '../modules';
 
 import { TaskList } from './TaskList';
