@@ -1,17 +1,15 @@
 import { Story } from '@storybook/react';
+import { Provider } from 'react-redux';
 
 import { TaskList ,TaskListProps } from './TaskList';
 import * as TaskStories from './Task.stories';
 
-import store from '../modules/index';
-
-import { Provider } from 'react-redux';
-
+import { store } from '../modules';
 
 export default {
     component: TaskList,
     title: 'TaskList',
-    decorators: [(story: any) => <Provider store={store}>{ story()}</Provider>],
+    decorators: [(story: any) => <Provider store={store}>{story()}</Provider>],
 
 }
 

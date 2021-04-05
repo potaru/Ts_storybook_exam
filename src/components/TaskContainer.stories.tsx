@@ -1,8 +1,10 @@
-import TaskContainer, { TaskContainerProps } from './TaskContainer';
 import { Story } from '@storybook/react';
 
+import TaskContainer, { TaskContainerProps } from './TaskContainer';
+
 import { Provider } from 'react-redux';
-import store from '../modules/index';
+
+import { store } from '../modules';
 
 
 export default {

@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import TaskContainer from './components/TaskContainer';
-import store  from './modules/index';
+import { store } from './modules'
 
 import './index.css';
 
