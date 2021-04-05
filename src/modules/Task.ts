@@ -1,8 +1,8 @@
-const ARCHIVE = 'task/ARCHIVE' as const;
-const PIN = 'task/PIN' as const;
+const ARCHIVED = 'task/ARCHIVED' as const;
+const PINNED = 'task/PINNED' as const;
 
-export const archiveTask = (id: string) => ({ type: ARCHIVE, id });
-export const pinTask = (id: string) => ({ type: PIN, id });
+export const archiveTask = (id: string) => ({ type: ARCHIVED, id });
+export const pinTask = (id: string) => ({ type: PINNED, id });
 
 type TaskAction =
   | ReturnType<typeof archiveTask>
@@ -41,9 +41,9 @@ function taskStateReducer(taskState: string) {
 
 function task(state: TaskState = {tasks: initialState}, action: TaskAction){
   switch (action.type) {
-    case ARCHIVE:
+    case ARCHIVED:
       return taskStateReducer('TASK_ARCHIVED')(state, action);
-    case PIN:
+    case PINNED:
       return taskStateReducer('TASK_PINNED')(state, action);
     default:
       return state;
