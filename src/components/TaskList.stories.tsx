@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import { Provider } from 'react-redux';
 
-import { TaskList ,TaskListProps } from './TaskList';
+import { TaskList, TaskListProps } from './TaskList';
 import * as TaskStories from './Task.stories';
 
 import { store } from '../modules';

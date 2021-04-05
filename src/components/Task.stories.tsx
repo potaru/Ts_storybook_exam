@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
 import Task, { TaskProps }  from './Task';
 
-
 export default {
     component: Task,
     title: 'Task',
