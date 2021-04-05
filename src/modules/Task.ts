@@ -20,15 +20,15 @@ export type TaskState = {
 
 
 const initialState: Task[] = [
-    { id: '1', title: 'Test Task', state: 'Task_INBOX'},
-    { id: '2', title: 'Test Task', state: 'Task_INBOX'},
-    { id: '3', title: 'Test Task', state: 'Task_INBOX'},
-    { id: '4', title: 'Test Task', state: 'Task_INBOX'},
-    { id: '5', title: 'Test Task', state: 'TASK_PINNED'},
-    { id: '6', title: 'Test Task', state: 'Task_ARCHIVED'}
+    { id: '1', title: 'Test Task1', state: 'Task_INBOX'},
+    { id: '2', title: 'Test Task2', state: 'Task_INBOX'},
+    { id: '3', title: 'Test Task3', state: 'Task_INBOX'},
+    { id: '4', title: 'Test Task4', state: 'Task_INBOX'},
+    { id: '5', title: 'Test Task5', state: 'TASK_PINNED'},
+    { id: '6', title: 'Test Task6', state: 'Task_ARCHIVED'}
 ];
 
-function taskStateReducer(taskState: string) {
+function taskStateReducer(taskState: 'TASK_ARCHIVED' | 'TASK_PINNED') {
   return (state: TaskState, action: TaskAction) => {
     return {
       ...state,

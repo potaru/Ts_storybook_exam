@@ -3,11 +3,10 @@ import { Story } from '@storybook/react';
 import { TaskList ,TaskListProps } from './TaskList';
 import * as TaskStories from './Task.stories';
 
-import { createStore } from 'redux';
-import rootReducer from '../modules';
+import store from '../modules/index';
+
 import { Provider } from 'react-redux';
 
-const store = createStore(rootReducer);
 
 export default {
     component: TaskList,

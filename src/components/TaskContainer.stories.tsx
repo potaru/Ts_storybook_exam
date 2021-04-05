@@ -2,10 +2,8 @@ import TaskContainer, { TaskContainerProps } from './TaskContainer';
 import { Story } from '@storybook/react';
 
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from '../modules';
+import store from '../modules/index';
 
-const store = createStore(rootReducer);
 
 export default {
     component: TaskContainer,
