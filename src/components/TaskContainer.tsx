@@ -5,43 +5,43 @@ import { RootState } from '../modules';
 import { TaskList } from './TaskList';
 
 export interface TaskContainerProps {
-    // loading?: boolean;
-    // error?: string;
-    
+	// loading?: boolean;
+	// error?: string;
+
 }
 
 export default function TaskContainer() {
-    const tasks = useSelector((state: RootState) => state.task.tasks);
-    const dispatch = useDispatch();
-    const error = "";
-  
-    const onArchiveTask = (id: string) => dispatch(archiveTask(id));
-    const onPinTask = (id: string) => dispatch(pinTask(id));
+	const tasks = useSelector((state: RootState) => state.task.tasks);
+	const dispatch = useDispatch();
+	const error = "";
 
-    if (error) {
-        return (
-        <div className="page lists-show">
-            <div className="wrapper-message">
-                <span className="icon-face-sad" />
-                <div className="title-message">
-                    Oh no!
-                </div>
-                <div className="subtitle-message">
-                    {error}
-                </div>
-            </div>
-        </div>
-        );
-    }
+	const onArchiveTask = (id: string) => dispatch(archiveTask(id));
+	const onPinTask = (id: string) => dispatch(pinTask(id));
 
-    return (
-        <div className="page lists-show">
-            <nav>
-                <h1 className="title-page">
-                <span className="title-wrapper">Taskbox</span>
-                </h1>
-            </nav>
-            <TaskList tasks={tasks} onArchiveTask={onArchiveTask} onPinTask={onPinTask} loading={false}/>
-        </div>
-    );
+	if (error) {
+		return (
+			<div className="page lists-show">
+				<div className="wrapper-message">
+					<span className="icon-face-sad" />
+					<div className="title-message">
+						Oh no!
+					</div>
+					<div className="subtitle-message">
+						{error}
+					</div>
+				</div>
+			</div>
+		);
+	}
+
+	return (
+		<div className="page lists-show">
+			<nav>
+				<h1 className="title-page">
+					<span className="title-wrapper">Taskbox</span>
+				</h1>
+			</nav>
+			<TaskList tasks={tasks} onArchiveTask={onArchiveTask} onPinTask={onPinTask} loading={false} />
+		</div>
+	);
 }

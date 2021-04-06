@@ -9,7 +9,7 @@ export type Task = {
   title: string;
   state: string;
 };
-
+    
 export type TaskState = {
   tasks: Task[]
 };
