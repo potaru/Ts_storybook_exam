@@ -1,21 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { archiveTask, pinTask } from '../modules/Task';
+import { archiveTask, pinTask } from '../modules/task';
 import { RootState } from '../modules';
 
 import { TaskList } from './TaskList';
 
 export interface TaskContainerProps {
-    error?: string;
+    // loading?: boolean;
+    // error?: string;
+    
 }
 
-export default function TaskContainer(error: TaskContainerProps) {
+export default function TaskContainer() {
     const tasks = useSelector((state: RootState) => state.task.tasks);
     const dispatch = useDispatch();
+    const error = "";
   
     const onArchiveTask = (id: string) => dispatch(archiveTask(id));
     const onPinTask = (id: string) => dispatch(pinTask(id));
 
-    if (error.error) {
+    if (error) {
         return (
         <div className="page lists-show">
             <div className="wrapper-message">
@@ -24,7 +27,7 @@ export default function TaskContainer(error: TaskContainerProps) {
                     Oh no!
                 </div>
                 <div className="subtitle-message">
-                    {error.error}
+                    {error}
                 </div>
             </div>
         </div>

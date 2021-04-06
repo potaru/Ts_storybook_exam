@@ -5,8 +5,8 @@ import Task, { TaskObject } from './Task';
 export interface TaskListProps {
     tasks: TaskObject[];
     loading?: boolean;
-    onArchiveTask(id:string): any;
-    onPinTask(id:string): any;
+    onArchiveTask: (id: string) => void;
+    onPinTask: (id:string) => void;
 }
 
 export function TaskList({tasks, loading, onArchiveTask, onPinTask}: TaskListProps): ReactElement {
