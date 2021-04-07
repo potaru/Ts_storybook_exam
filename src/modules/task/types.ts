@@ -4,12 +4,12 @@ export type TaskAction =
   | ReturnType<typeof archiveTask>
   | ReturnType<typeof pinTask>
 
-export type Task = {
+export type TaskType = {
   id: string;
   title: string;
   state: string;
 };
     
 export type TaskState = {
-  tasks: Task[]
+  tasks: TaskType[]
 };

@@ -4,16 +4,13 @@ import { RootState } from '../modules';
 
 import { TaskList } from './TaskList';
 
-export interface TaskContainerProps {
-	// loading?: boolean;
-	// error?: string;
-
+export type TaskContainerProps = {
+	error: string | null;
 }
 
-export default function TaskContainer() {
+export default function TaskContainer({error}: TaskContainerProps) {
 	const tasks = useSelector((state: RootState) => state.task.tasks);
 	const dispatch = useDispatch();
-	const error = "";
 
 	const onArchiveTask = (id: string) => dispatch(archiveTask(id));
 	const onPinTask = (id: string) => dispatch(pinTask(id));

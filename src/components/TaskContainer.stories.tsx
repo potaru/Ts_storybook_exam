@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 
 import { store } from '../modules';
 
-
 export default {
 	component: TaskContainer,
 	decorators: [(story: any) => <Provider store={store}>{story()}</Provider>],
@@ -19,5 +18,5 @@ export const Default = Template.bind({});
 
 export const Error = Template.bind({});
 Error.args = {
-	error: 'Something',
+	error: 'Something Error'
 };

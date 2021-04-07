@@ -1,12 +1,12 @@
 import { createReducer } from 'typesafe-actions';
 import { ARCHIVED, PINNED } from './actions';
 
-import { Task, TaskAction, TaskState } from "./types";
+import { TaskType, TaskAction, TaskState } from "./types";
 
 export const archiveTask = (id: string) => ({ type: ARCHIVED, id });
 export const pinTask = (id: string) => ({ type: PINNED, id });
 
-const initialState: Task[] = [
+const initialState: TaskType[] = [
 	{ id: '1', title: 'Test Task1', state: 'Task_INBOX' },
 	{ id: '2', title: 'Test Task2', state: 'Task_INBOX' },
 	{ id: '3', title: 'Test Task3', state: 'Task_INBOX' },

@@ -1,7 +1,7 @@
 import React from 'react';
 import './GithubProfileInfo.css';
 
-type GithubProfileInfoProps = {
+export type GithubProfileInfoProps = {
   name: string;
   thumbnail: string;
   bio: string;

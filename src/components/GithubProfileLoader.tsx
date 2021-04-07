@@ -5,6 +5,10 @@ import { getUserProfileAsync } from '../modules/github';
 import GithubUsernameForm from './GithubUsernameForm';
 import GithubProfileInfo from '../components/GithubProfileInfo';
 
+export type GithubProfileLoaderProps = {
+	
+}
+
 function GithubProfileLoader() {
   const { data, loading, error } = useSelector((state: RootState) => state.github.userProfile);
   const dispatch = useDispatch();

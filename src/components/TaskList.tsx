@@ -1,9 +1,10 @@
 import { ReactElement } from 'react'
+import { TaskType } from '../modules/task';
 
-import Task, { TaskObject } from './Task';
+import Task from './Task';
 
-export interface TaskListProps {
-  tasks: TaskObject[];
+export type TaskListProps = {
+  tasks: TaskType[];
   loading?: boolean;
   onArchiveTask: (id: string) => void;
   onPinTask: (id: string) => void;
@@ -46,9 +47,9 @@ export function TaskList({ tasks, loading, onArchiveTask, onPinTask }: TaskListP
       </div>
     );
   }
-  const filtered_task: TaskObject[] = [
-    ...tasks.filter((task: TaskObject) => task.state === 'TASK_PINNED'),
-    ...tasks.filter((task: TaskObject) => task.state !== 'TASK_PINNED')
+  const filtered_task: TaskType[] = [
+    ...tasks.filter((task: TaskType) => task.state === 'TASK_PINNED'),
+    ...tasks.filter((task: TaskType) => task.state !== 'TASK_PINNED')
   ]
   return (
     <div className="list-items">

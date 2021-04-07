@@ -1,15 +1,10 @@
 import { ReactElement } from 'react'
+import { TaskType } from '../modules/task'
 
-export interface TaskProps {
-	task: TaskObject;
-	onArchiveTask(id: string): any;
-	onPinTask(id: string): any;
-}
-
-export interface TaskObject {
-	id: string;
-	title: string;
-	state: string;
+export type TaskProps = {
+	task: TaskType;
+	onArchiveTask: (id: string)  => void;
+	onPinTask: (id: string) => void;
 }
 
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }: TaskProps): ReactElement {

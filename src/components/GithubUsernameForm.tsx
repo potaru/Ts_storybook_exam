@@ -1,7 +1,7 @@
 import React, { FormEvent, useState, ChangeEvent } from 'react';
 import './GithubUsernameForm.css';
 
-type GithubUsernameFormProps = {
+export type GithubUsernameFormProps = {
   onSubmitUsername: (username: string) => void;
 };
 
