@@ -16,7 +16,7 @@ You will also see any lint errors in the console.
 
 # Ts_storybook_exam
 
-react 공부용 레포
+react 공부용 레포\
 -react\
 -redux(saga)\
 -storybook
