@@ -1,12 +1,12 @@
 import { Story } from '@storybook/react';
-import GithubProfile, { GithubProfileInfoProps } from './GithubProfileInfo';
+import GithubProfileInfo, { GithubProfileInfoProps } from './GithubProfileInfo';
 
 export default {
-  component: GithubProfile,
-  title: 'GithubProfile',
+  component: GithubProfileInfo,
+  title: 'GithubProfileInfo',
 };
 
-const Template: Story<GithubProfileInfoProps> = (args) => <GithubProfile {...args} />;
+const Template: Story<GithubProfileInfoProps> = (args) => <GithubProfileInfo {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
