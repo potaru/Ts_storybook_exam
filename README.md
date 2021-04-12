@@ -1,8 +1,8 @@
 # React Study Repo
   
-> This is a repository for my React studies 
+> This repository is for my React studies based on Typescript
 
-## Used language for each component
+## Used tech for each component
 + Task
   + redux
   + storybook
