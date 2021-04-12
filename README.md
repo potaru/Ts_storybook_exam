@@ -10,5 +10,6 @@
 + Github
   + redux-saga
   + storybook
+  + axios
 
 ### `yarn start`
