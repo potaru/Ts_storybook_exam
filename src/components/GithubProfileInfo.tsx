@@ -1,24 +1,39 @@
 import React from 'react';
+import { GithubProfile } from '../api/github';
+
 import './GithubProfileInfo.css';
 
 export type GithubProfileInfoProps = {
-  name: string;
-  thumbnail: string;
-  bio: string;
-  url: string;
+	loading: boolean;
+	error: Error | null;
+	data: GithubProfile | null;
 };
 
-function GithubProfileInfo({ name, thumbnail, bio, url }: GithubProfileInfoProps) {
-  return (
-    <div className="GithubProfileInfo">
-      <div className="profile-head">
-        <img src={thumbnail} alt="user thumbnail" />
-        <div className="name">{name}</div>
-      </div>
-      <p>{bio}</p>
-      <div className="url">url: {url !== '' && <a href={url}>{url}</a>}</div>
-    </div>
-  );
+
+function GithubProfileInfo({ loading, error, data }: GithubProfileInfoProps) {
+
+	if (loading) {
+		return <p style={{ textAlign: 'center' }}>로딩중..</p>;
+	}
+
+	else if (error) {
+		return <p style={{ textAlign: 'center' }}>{error.name}: {error.message}</p>
+	}
+	
+	else if (data) {
+		return (
+			<div className="GithubProfileInfo">
+				<div className="profile-head">
+					<img src={data.avatar_url} alt="user thumbnail" />
+					<div className="name">{data.name}</div>
+				</div>
+				<p>{data.bio}</p>
+				<div className="url">url: {data.html_url !== '' && <a href={data.html_url}>{data.html_url}</a>}</div>
+			</div>
+		);
+	}
+	
+	return null;
 }
 
 export default GithubProfileInfo;
