@@ -5,16 +5,16 @@ import { RootState } from '../modules';
 import { TaskList } from './TaskList';
 
 export type TaskContainerProps = {
-	error: string | null;
 }
 
-export default function TaskContainer({error}: TaskContainerProps) {
+export default function TaskContainer() {
 	const tasks = useSelector((state: RootState) => state.task.tasks);
 	const dispatch = useDispatch();
 
 	const onArchiveTask = (id: string) => dispatch(archiveTask(id));
 	const onPinTask = (id: string) => dispatch(pinTask(id));
-
+	const error = null;
+	
 	if (error) {
 		return (
 			<div className="page lists-show">

@@ -1,16 +1,22 @@
 import { Provider } from 'react-redux';
-import TaskContainer from './components/TaskContainer';
-import GithubProfileLoader from './components/GithubProfileContainer';
+
+import Menu from './components/Menu'
 
 import { store } from './modules'
+
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
 
 import './index.css';
 
 function App() {
   return (
-    <Provider store={store}>
-      <GithubProfileLoader />
-    </Provider>
+		<Router>
+    	<Provider store={store}>
+				<Menu />
+			</Provider>
+		</Router>
   );
 }
 
