@@ -3,13 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../modules';
 import { getUserProfileAsync } from '../modules/github';
 import GithubUsernameForm from './GithubUsernameForm';
-import GithubProfileInfo from '../components/GithubProfileInfo';
+import GithubProfileInfo from './GithubProfileInfo';
 
-export type GithubProfileLoaderProps = {
-	
-}
-
-function GithubProfileLoader() {
+function GithubProfileContainer() {
   const { data, loading, error } = useSelector((state: RootState) => state.github.userProfile);
   const dispatch = useDispatch();
 
@@ -25,4 +21,4 @@ function GithubProfileLoader() {
   );
 }
 
-export default GithubProfileLoader;
+export default GithubProfileContainer;

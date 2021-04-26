@@ -1,6 +1,8 @@
 import { ReactElement } from 'react'
 import { TaskType } from '../modules/task'
 
+import './Task.css'
+
 export type TaskProps = {
 	task: TaskType;
 	onArchiveTask: (id: string)  => void;

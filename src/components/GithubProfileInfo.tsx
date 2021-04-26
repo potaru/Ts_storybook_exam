@@ -9,7 +9,6 @@ export type GithubProfileInfoProps = {
 	data: GithubProfile | null;
 };
 
-
 function GithubProfileInfo({ loading, error, data }: GithubProfileInfoProps) {
 
 	if (loading) {

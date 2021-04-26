@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import TaskContainer from './components/TaskContainer';
-import GithubProfileLoader from './components/GithubProfileLoader';
+import GithubProfileLoader from './components/GithubProfileContainer';
 
 import { store } from './modules'
 
